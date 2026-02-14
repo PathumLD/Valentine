@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  background: #0d0a12;
+  color: #fce4ec;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 64, 129, 0.4);
+  border-radius: 4px;
+}
+
+/* ============================
+   DARK ROMANTIC BACKGROUNDS
+   ============================ */
+
+/* Deep night sky with aurora */
+.romantic-night-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(136, 14, 79, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(194, 24, 91, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(255, 23, 68, 0.1) 0%, transparent 60%),
+    linear-gradient(160deg, #0d0a12 0%, #1a0e1f 30%, #1e0f24 50%, #160c1a 70%, #0d0a12 100%);
+  background-size: 100% 100%;
+}
+
+/* Wizard subtle variant */
+.romantic-wizard-bg {
+  background: radial-gradient(ellipse at 30% 40%, rgba(136, 14, 79, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 64, 129, 0.12) 0%, transparent 50%),
+    linear-gradient(160deg, #0d0a12 0%, #170d1d 40%, #1c0e22 60%, #0d0a12 100%);
+}
+
+/* Celebration gradient (richer, more vibrant) */
+.celebration-bg {
+  background: radial-gradient(ellipse at 30% 20%, rgba(255, 23, 68, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 40%, rgba(224, 64, 251, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(160deg, #1a0a1e 0%, #2d0a2e 30%, #3d0f35 50%, #2a0a25 70%, #1a0a1e 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* ============================
+   GLASS CARD (DARK THEME)
+   ============================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 64, 129, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-glow {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 64, 129, 0.12);
+  border-radius: 32px;
+  box-shadow:
+    0 8px 40px rgba(255, 23, 68, 0.12),
+    0 0 60px rgba(255, 64, 129, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
+
+/* Yes CTA button - prominent, glowing */
+.yes-btn {
+  position: relative;
+  background: linear-gradient(135deg, #FF1744, #FF4081, #E040FB);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  border-radius: 50px;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 4px 20px rgba(255, 23, 68, 0.4),
+    0 0 40px rgba(255, 23, 68, 0.15);
+  overflow: hidden;
+}
+
+.yes-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.yes-btn:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 6px 30px rgba(255, 23, 68, 0.55),
+    0 0 60px rgba(255, 64, 129, 0.25);
+}
+
+.yes-btn:active {
+  transform: scale(0.97);
+}
+
+/* No button style - subtle, ghost-like */
+.no-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(248, 187, 208, 0.7);
+  border: 1px solid rgba(255, 64, 129, 0.2);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.no-btn:hover {
+  background: rgba(255, 64, 129, 0.08);
+  border-color: rgba(255, 64, 129, 0.3);
+}
+
+/* ============================
+   TEXT EFFECTS
+   ============================ */
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 23, 68, 0.4), 0 0 40px rgba(255, 64, 129, 0.2), 0 0 80px rgba(255, 23, 68, 0.1);
+}
+
+.glow-text-soft {
+  text-shadow: 0 0 15px rgba(255, 64, 129, 0.3), 0 0 30px rgba(255, 23, 68, 0.15);
+}
+
+.gold-glow {
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+/* ============================
+   DECORATIVE
+   ============================ */
+
+/* Floating particle orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Heart burst effect */
+@keyframes heartBurst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5) rotate(45deg) translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
+}
+
+/* Typewriter cursor */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #FF4081;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Sparkle particles */
+.sparkle-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 50%;
+  animation: sparkle 1.5s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
+/* Star twinkle */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+}
